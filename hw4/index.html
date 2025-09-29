@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>homework 4</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1 class="hidden">отель riverside. Насладитесь идеальным отдыхом
+            </h1>
+            <header class="header">
+                <img src="./svg/burg_menu.svg" alt="бургер меню" class="burger-menu">
+                <a class="header__logo">riverside</a>
+                <nav class="navigation">
+                    <ul class="navigation__list">
+                        <li class="navigation__item"><a class="navigation__link"
+                                href="#">About Us</a></li>
+                        <li class="navigation__item"><a class="navigation__link"
+                                href="#">Events</a></li>
+                        <li class="navigation__item"><a class="navigation__link"
+                                href="#">Contact Us</a></li>
+                        <li class="navigation__item"><a
+                                class="navigation__link navigation__link--book"
+                                href="#">book</a></li>
+                    </ul>
+                </nav>
+                <div class="language-selector">
+                    <img class="language-selector__img" src="./svg/world.svg"
+                        alt="выбрать язык">
+                    <span class="language-selector__text">RU</span>
+                </div>
+            </header>
+            <main class="main">
+                <section class="hero">
+                    <div class="hero__img">
+                        <div class="hero__blocks">
+                            <div class="hero__item hero__item--destinaton">
+                                <span>Hotel or destination</span>
+                                <select name id>
+                                    <option value>Select</option>
+                                </select>
+                            </div>
+                            <div class="hero__item hero__item--arrival">
+                                <span>Arrival</span>
+                                <select name id>
+                                    <option value>15.10.2025</option>
+                                </select>
+                            </div>
+                            <div class="hero__item hero__item--departure">
+                                <span>Departure</span>
+                                <select name id>
+                                    <option value>30.10.2025</option>
+                                </select>
+                            </div>
+                            <div class="hero__item hero__item--book">
+                                <a href="#">book</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="about">
+                    <h2 class="about__header">about us</h2>
+                    <div class="about__description">
+                        <p class="about__paragraph">The way we travel and move
+                            has
+                            changed in the last few years. We no longer want the
+                            typical photo that all our contacts post on
+                            Instagram.
+                            We no longer want to elbow our way through crowded
+                            museums. We no longer want to view the city through
+                            the
+                            mobile lens.
+                        </p>
+                        <p class="about__paragraph">It’s not about travelling,
+                            it’s
+                            about discovering. Travellers are the 21st century
+                            pilgrims who seek the basic, long-lasting and human
+                            essence. The city is a canvas of emotions and
+                            experiences and culture is the invisible
+                            architecture
+                            that frames it.
+
+                        </p>
+                        <p class="about__paragraph">Only YOU designs a new way
+                            of
+                            travelling inspired by the local and human
+                            connection
+                            where each hotel turns into a reflection of its
+                            environment. Dear travellers: you’ve reached your
+                            destination.</p>
+                    </div>
+                </section>
+
+                <section class="events">
+                    <h2 class="events__header">our events</h2>
+                    <div class="events__cards">
+                        <figure class="events__item">
+                            <img class="events__item-img" src="./img/pic1.png"
+                                alt>
+                            <figcaption class="events__item-content">
+                                <h4 class="events__item-location">Cocktails ,
+                                    Bites</h4>
+                                <p>Riverside Valencia</p>
+                            </figcaption>
+                            <div class="events__item-calendar">
+                                <h3 class="events__item-date">24</h3>
+                                <p class="events__item-month">oct</p>
+                            </div>
+                        </figure>
+                        <figure class="events__item">
+                            <img class="events__item-img" src="./img/pic2.png"
+                                alt>
+                            <figcaption class="events__item-content">
+                                <h4 class="events__item-location">Weekend
+                                    Brunch</h4>
+                                <p>Riverside Malagia</p>
+                            </figcaption>
+                            <div class="events__item-calendar">
+                                <h3 class="events__item-date">25</h3>
+                                <p class="events__item-month">oct</p>
+                            </div>
+                        </figure>
+                        <figure class="events__item">
+                            <img class="events__item-img" src="./img/pic3.png"
+                                alt>
+                            <figcaption class="events__item-content">
+                                <h4 class="events__item-location">Piano
+                                    Night</h4>
+                                <p>Riverside Atocha</p>
+                            </figcaption>
+                            <div class="events__item-calendar">
+                                <h3 class="events__item-date">26</h3>
+                                <p class="events__item-month">oct</p>
+                            </div>
+                        </figure>
+                    </div>
+                    <a class="events__btn">book</a>
+                </section>
+
+                <section class="contact">
+                    <h2 class="contact__header">contact us</h2>
+                    <form class="contact__form">
+                        <div class="contact__field contact__field--name">
+                            <label class="contact__label" for="name">name*</label>
+                            <input id="name" type="text">
+                        </div>
+                        <div class="contact__field contact__field--sername">
+                            <label class="contact__label" for="sername">sername*</label>
+                            <input id="sername" type="text">
+                        </div>
+                        <div class="contact__field contact__field--city">
+                            <label class="contact__label" for="city">city*</label>
+                            <input id="city" type="text">
+                        </div>
+                        <div class="contact__field contact__field--country">
+                            <label class="contact__label" for="phone">country*</label>
+                            <input id="country" type="country">
+                        </div>
+                        <div class="contact__field contact__field--phone">
+                            <label class="contact__label" for="name">phone*</label>
+                            <input id="phone" type="tel">
+                        </div>
+                        <div class="contact__field contact__field--email">
+                            <label class="contact__label" for="name">email*</label>
+                            <input id="email" type="email">
+                        </div>
+
+                        <div class="contact__field contact__field--message">
+                            <label class="contact__label" for="message">message*</label>
+                             <textarea id="message" class="contact__textarea"></textarea>
+                        </div>
+
+
+                    </form>
+                    <a class="contact__button">send</a>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <div class="footer__content">
+                    <a class="footer__logo">riverside</a>
+
+                    <div class="footer__nav">
+
+                        <div class="footer__section">
+                            <h5 class="footer__title">about</h5>
+                            <ul class="footer__list">
+                                <li class="footer__link"><a href="#">about us</a></li>
+                                <li class="footer__link"><a href="#">careers</a></li>
+                                <li class="footer__link"><a href="#">contact us</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer__nav-reservations">
+                            <h5 class="footer__title">Reservations</h5>
+                            <ul class="footer__list">
+                                <li class="footer__link"><a href="#">request an invoice</a></li>
+                                <li class="footer__link"><a href="#">find a reservation</a></li>
+                                <li class="footer__link"><a href="#">email preferences</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__nav-news">
+                            <h5 class="footer__title">news</h5>
+                            <ul class="footer__list">
+                                <li class="footer__link"><a href="#">press room</a></li>
+                                <li class="footer__link"><a href="#">new openings</a></li>
+                                <li class="footer__link"><a href="#">magazine</a></li>
+                                <li class="footer__link"><a href="#">newsletter</a></li>
+                            </ul>                            
+                        </div>
+                    </div>
+
+                    <div class="footer__social">
+                        <a href="#"><img src="./svg/🦆 icon _facebook_.svg" alt=""></a>
+                        <a href="#"><img src="./svg/🦆 icon _instagram alt_.svg" alt=""></a>
+                        <a href="#"><img src="./svg/🦆 icon _twitter_.svg" alt=""></a>
+                        <a href="#"><img src="./svg/🦆 icon _youtube fill_.svg" alt=""></a>
+                    </div>
+
+                    <div class="footer__legal">
+                        <a class="footer__legal-link" href="#">legal notice</a>
+                        <a class="footer__legal-link" href="#">privacy policy</a>
+                        <a class="footer__legal-link" href="#">cookie preferences</a>
+                        <a class="footer__legal-link" href="#">cookie acessability policy</a>
+                    </div>
+
+                    <div class="footer__rights">
+                        <span>Riverside Hotel 1997 -2002. All Rights Reserved.</span>
+                    </div>
+
+                    
+
+                </div>
+                
+            </footer>
+        </div>
+    </body>
+</html>
