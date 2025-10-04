@@ -41,7 +41,7 @@ html {
 }
 
 body {
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 li, a {
@@ -69,6 +69,7 @@ li {
     font-weight: 600;
     cursor: pointer;
     transition: opacity 0.3s, transform 0.3s;
+    text-transform: capitalize;
 }
 
 .button:hover {
@@ -76,13 +77,26 @@ li {
     transform: scale(1.05);
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    white-space: nowrap;
+}
+
 /* СТИЛИЗАЦИЯ <HEADER> ===================== */
 .wrapper__header {
     color: white;
-    padding: 1rem 4.375rem 0;
+    padding: 0rem 4.375rem;
     background: url('../img/main_photo.png') top/cover;
     height: 100vh;
     overflow: hidden;
+    transition: height 0.5s ease-in-out;
 }
 
 .header__top {
@@ -94,6 +108,17 @@ li {
     text-transform: capitalize;
     margin-bottom: 4.25rem;
     position: relative;
+    padding-top: 1rem;
+}
+
+.header__phone::before {
+    content: '';
+    background: url('../img/telephone-call_256.png') center/cover;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
 }
 
 /* КНОПКА ДЛЯ МОБИЛКИ ====================== */
@@ -158,12 +183,12 @@ li {
 }
 
 .header__title {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     font-size: 4.375rem;
 }
 
 .header__subtitle {
-    margin-bottom: 5rem;
+    margin-bottom: 3.5rem;
     font-weight: normal;
     font-size: 1.1rem;
 }
@@ -199,8 +224,14 @@ li {
     flex-direction: column;
     align-items: center;
     gap: 1.2rem;
-    position: absolute;
-    right: 0;
+    position: fixed;
+    right: max(25px, calc(50% - 800px));
+    top: 380px;
+    transform: translateY(-60%);
+    z-index: 1000;
+    background-color: rgba(17, 24, 24, 0.5);
+    padding: 0.9rem;
+    border-radius: 15px;
 }
 
 .scroll__dots {
@@ -287,7 +318,211 @@ li {
 /* СТИЛИЗАЦИЯ <MAIN> ======================= */
 .wrapper__main {
     color: var(--text-color);
-    padding: 1rem 4.375rem 0;
+    padding: 0 4.375rem;
     height: 100vh;
     overflow: hidden;
+    background: url('../svg/background_main.svg') center/cover;
+    transition: height 0.5s ease-in-out;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 0 auto 2.25rem;
+    padding-top: 1rem;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.feature-card__icon {
+    width: 2.8125rem;
+    height: auto;
+}
+
+.feature-card__icon {
+    margin-bottom: 2rem;
+}
+
+.feature-card__title {
+    margin-bottom: 0.8rem;
+}
+
+/* СТИЛИЗАЦИЯ <MAIN> => <ROUTES> =========== */
+.routes {
+    color: var(--text-color);
+    position: relative;
+}
+
+.routes__title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.25rem;
+    margin-bottom: 2.75rem;
+}
+
+.routes__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4.5rem;
+}
+
+.routes__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.routes__card-title {
+    text-transform: uppercase;
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.routes__card-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.routes__specs {
+    margin-bottom: 1rem;
+}
+
+.routes__spec {
+    color: var(--text-color);
+    text-transform: uppercase;
+    margin-bottom: .75rem;
+}
+
+.routes__spec span {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.routes__route-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+}
+
+.routes__route-points {
+    max-width: 75%;
+    margin-bottom: 1rem;
+}
+
+.routes__action {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.routes__button--details {
+    background: none;
+    border: solid 1.5px var(--accent-color);
+    color: var(--accent-color);
+}
+
+.routes__image {
+    max-width: 500px;
+    height: auto;
+}
+
+/* СТИЛИЗАЦИЯ <CARRUSEL> =================== */
+.container {
+    overflow: hidden;
+    max-width: 350px;
+    height: auto;
+    margin: 0 auto 50px;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 1.5s ease-in-out;
+    width: 1050px;
+}
+
+.slide {
+    width: 350px;
+    flex-shrink: 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* СТИЛИЗАЦИЯ КНОПОК КАРУСЕЛИ ============== */
+.next-button, .prev-button {
+    background: var(--accent-color);
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0.4rem;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+    position: absolute;
+    z-index: 100;
+    opacity: 0.5;
+    transition: all .5s;
+    border-radius: 15px;
+    width: 40px;
+    height: 40px;
+}
+
+.next-button:hover, .prev-button:hover {
+    opacity: 0.9;
+}
+
+.next-button {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev-button {
+    position: absolute;
+    left: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 1024px) {
+    .routes__content {
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+    }
+
+    .routes__action {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin: 0 auto 2.25rem;
+        padding-top: 1rem;
+    }
+
+    .routes__content {
+        flex-direction: column;
+    }
+
+    .routes__action {
+        margin-bottom: 0.5rem;
+    }
 }
