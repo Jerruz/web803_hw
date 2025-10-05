@@ -1,29 +1,28 @@
 function nextPage(event) {
-    if (event.target == scrollDots.children[1]) {
-        screenHeader.style.height = 0;
-        screenMain.style.height = '100vh';
-        scrollDots.children[0].classList.remove('scroll__dot--active')
-        scrollDots.children[2].classList.remove('scroll__dot--active')
-        scrollDots.children[1].classList.add('scroll__dot--active')
-    } else if (event.target == scrollDots.children[2]) {
-        scrollDots.children[0].classList.remove('scroll__dot--active')
-        scrollDots.children[1].classList.remove('scroll__dot--active')
-        scrollDots.children[2].classList.add('scroll__dot--active')
-        screenHeader.style.height = 0;
-        screenMain.style.height = 0;
-    } else if (event.target == scrollDots.children[0]) {
-        scrollDots.children[0].classList.add('scroll__dot--active')
-        scrollDots.children[2].classList.remove('scroll__dot--active')
-        scrollDots.children[1].classList.remove('scroll__dot--active')
-        screenHeader.style.height = '100vh';
-        screenMain.style.height = 0;
-    }
+    const dots = scrollDots.children;
+    const targetDot = event.target;
+
+    // if (!targetDot.classList.contains('scroll__dot')) return;
+
+    Array.from(dots).forEach(dot => dot.classList.remove('scroll__dot--active'));
+    targetDot.classList.add('scroll__dot--active');
+
+    const dotIndex = Array.from(dots).indexOf(targetDot);
+    const screenStates = [
+        { header: '100vh', main: '0' },
+        { header: '0', main: '100vh' },
+        { header: '0', main: '0' }
+    ];
+
+    const state = screenStates[dotIndex];
+    screenHeader.style.height = state.header;
+    screenMain.style.height = state.main;
 }
 
-let scrollDots = document.querySelector('.scroll__dots');
-let screenHeader = document.querySelector('.wrapper__header');
-let screenMain = document.querySelector('.wrapper__main');
+const scrollDots = document.querySelector('.scroll__dots');
+const screenHeader = document.querySelector('.wrapper__header');
+const screenMain = document.querySelector('.wrapper__main');
 
 document.addEventListener('DOMContentLoaded', () => {
-    scrollDots.addEventListener('click', nextPage)
-})
+    scrollDots.addEventListener('click', nextPage);
+});
